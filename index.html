@@ -11,11 +11,23 @@
         <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.0rc1.min.js"></script>
+        <script type="text/javascript">
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+            // PhoneGap is ready
+            //
+            function onDeviceReady() {
+                var element = document.getElementById('deviceProperties');
+                document.getElementById('name').value = device.name; 
+                document.getElementById('uuid').value = device.uuid; 
+                document.getElementById('version').value = device.version; 
+            }
+        </script>
     </head>
     <body>
         <div data-role="page" id="home">
             <div data-role="header">
-                <h1>Device Information</h1>
+                <h1>Device</h1>
             </div>
 
             <div data-role="content">
