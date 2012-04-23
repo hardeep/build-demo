@@ -21,6 +21,7 @@
                 document.getElementById('name').value = device.name; 
                 document.getElementById('uuid').value = device.uuid; 
                 document.getElementById('version').value = device.version; 
+                $("#listview").listview('refresh');
             }
         </script>
     </head>
