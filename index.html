@@ -24,9 +24,7 @@ function onDeviceReady() {
 // onSuccess: Get a snapshot of the current contacts
 //
 function onSuccess(contacts) {
-    for (var i=0; i<contacts.length; i++) {
-        console.log("Display Name = " + contacts[i].displayName);
-    }
+    alert(contacts[i].displayName);
 }
 
 // onError: Failed to get the contacts
@@ -40,6 +38,7 @@ function onError(contactError) {
 <body>
 <h1>Example</h1>
 <p>Find Contacts</p>
+<div id="contacts-list"></div>
 </body>
 </html>
 
