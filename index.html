@@ -1,44 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Contact Example</title>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
 
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-<script type="text/javascript" charset="utf-8">
+        <title>Device Information</title>
 
-// Wait for PhoneGap to load
-//
-document.addEventListener("deviceready", onDeviceReady, false);
+        <link rel="stylesheet" href="style/jquery.mobile-1.0rc1.min.css" />
 
-// PhoneGap is ready
-//
-function onDeviceReady() {
-    navigator.notification.alert('Cordova Loaded');
-    // find all contacts with 'Bob' in any name field
-    var options = new ContactFindOptions();
-    options.filter="Bob"; 
-    var fields = ["displayName", "name"];
-    //navigator.contacts.find(fields, onSuccess, onError, options);
-}
+        <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.0rc1.min.js"></script>
+    </head>
+    <body>
+        <div data-role="page" id="home">
+            <div data-role="header">
+                <h1>Device Information</h1>
+            </div>
 
-// onSuccess: Get a snapshot of the current contacts
-//
-function onSuccess(contacts) {
-    alert(contacts[i].displayName);
-}
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">Device Information</li>
+                    <li>Name: <span id="name"></span></li>
+                    <li>UUID: <span id="uuid"></span></li>
+                    <li>Cordova Version: <span id="version"></span></li>
+                </ul>
+            </div>
 
-// onError: Failed to get the contacts
-//
-function onError(contactError) {
-    alert('onError!');
-}
-
-</script>
-</head>
-<body>
-<h1>Example</h1>
-<p>Find Contacts</p>
-<div id="contacts-list"></div>
-</body>
+        </div>
+    </body>
 </html>
-
